@@ -2,9 +2,252 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>个人博客</title>
+    <style>
+
+        .word {
+            text-align: center;
+            padding: 10px;
+            color: #999;
+        }
+
+        .Navigation {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .layui-col-space5 {
+            background: #fafafa;
+
+        }
+
+        .met-news-list {
+            /*border: 1px solid red; 为了显示居中效果明显为 div 设置了边框*/
+            background: white;
+            width: 800px; /*定宽*/
+            margin: 20px auto; /* margin-left 与 margin-right 设置为 auto */
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px #888888;
+
+        }
+
+        /*.navigation-nav .layui-nav-item a {*/
+        /*display: block;*/
+        /*padding: 0 20px;*/
+        /*color: #fff;*/
+        /*color: #381f80;*/
+        /*transition: all .3s;*/
+        /*-webkit-transition: all .3s;*/
+        /*}*/
+
+        .met-news-title {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .pager-field {
+            text-align: center;
+        }
+
+        .met-news-content {
+            line-height: 2;
+            letter-spacing: 0.2px;
+            width: 100%;
+            height: 250px;
+            padding: 20px;
+        }
+
+        .info {
+            padding: 10px;
+        }
+
+        .met-news-navigation {
+            padding: 50px;
+
+        }
+
+        #layui-breadcrumb-id a {
+            color: #00f !important;
+            font-size: 17.5px;
+        }
+
+        #layui-breadcrumb-id a:hover {
+            color: #0C0C0C !important;
+            text-shadow: 5px 5px 5px #FF0000;
+        }
+
+        #go_top {
+            position: fixed;
+            LEFT: 85%;
+            bottom: 50px;
+        }
+    </style>
+    <link th:href="@{/static/layui/css/layui.css}" rel="stylesheet"/>
 </head>
 <body>
-    <p>Hello World</p>
+
+
+<div class="layui-row layui-col-space5">
+
+
+    <div class="Navigation ">
+        <div class="met-news-navigation">
+            <div class="layui-col-sm12">
+                <span class="layui-breadcrumb" id="layui-breadcrumb-id" lay-separator="|">
+                  <a class="met-news-navigation-text" href=""><i class="layui-icon layui-icon-home"></i> 首页</a>
+                  <a class="met-news-navigation-text" href="">Java</a>
+                  <a class="met-news-navigation-text" href="">Python</a>
+                  <a class="met-news-navigation-text" href="">JavaScript</a>
+                  <a class="met-news-navigation-text" href=""><i class="layui-icon layui-icon-fire"></i> 科技热点</a>
+                  <a class="met-news-navigation-text" href=""><i class="layui-icon layui-icon-about"></i> 关于我</a>
+
+                </span>
+            </div>
+        </div>
+        <div class="layui-col-sm12 ">
+            <h3 class="word">
+                倘若世上真的有神，那他的名字一定叫————真理
+            </h3>
+        </div>
+
+    </div>
+
+    <!--<hr class="layui-bg-blue">-->
+    <div class="layui-row layui-col-space5">
+        <div class="layui-col-sm12">
+            <div class="met-news-list">
+                <div class="time">
+                    <p class="info">
+                        <span class=""><i class="layui-icon layui-icon-date"></i> 2019.5.16</span>
+
+
+                        <span><i class="layui-icon layui-icon-log"></i> 22</span>
+                    </p>
+                </div>
+
+                <h2 class="met-news-title">
+                    <a href="#">文章的标题</a>
+                </h2>
+
+                <div class="met-news-content">
+                    <p>文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容</p>......
+                </div>
+
+            </div>
+            <div class="met-news-list">
+                <div class="time">
+                    <p class="info">
+                        <span class=""><i class="layui-icon layui-icon-date"></i> 2019.5.16</span>
+
+
+                        <span><i class="layui-icon layui-icon-log"></i> 22</span>
+                    </p>
+                </div>
+
+                <h2 class="met-news-title">
+                    <a href="#">文章的标题</a>
+                </h2>
+
+                <div class="met-news-content">
+                    <p>文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容</p>......
+                </div>
+
+            </div>
+            <div class="met-news-list">
+                <div class="time">
+                    <p class="info">
+                        <span class=""><i class="layui-icon layui-icon-date"></i> 2019.5.16</span>
+
+
+                        <span><i class="layui-icon layui-icon-log"></i> 22</span>
+                    </p>
+                </div>
+
+                <h2 class="met-news-title">
+                    <a href="#">文章的标题</a>
+                </h2>
+
+                <div class="met-news-content">
+                    <p>文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容</p>......
+                </div>
+
+            </div>
+            <div class="met-news-list">
+                <div class="time">
+                    <p class="info">
+                        <span class=""><i class="layui-icon layui-icon-date"></i> 2019.5.16</span>
+
+
+                        <span><i class="layui-icon layui-icon-log"></i> 22</span>
+                    </p>
+                </div>
+
+                <h2 class="met-news-title">
+                    <a href="#">文章的标题</a>
+                </h2>
+
+                <div class="met-news-content">
+                    <p>文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容</p>......
+                </div>
+
+            </div>
+
+
+            <div class="show-met-footer">
+                <ul class="pager pager-rund">
+                    <li class="pager-field">
+
+                        <a href="#" id="prePage"> <i class="layui-icon layui-icon-prev"></i>上一页</a>
+                        ....................
+
+                        <a href="#" id="sufPage">下一页<i class="layui-icon layui-icon-next"></i></a>
+
+                    </li>
+                    <!--<li class="next">-->
+                    <!--<i class="layui-icon layui-icon-next"></i>-->
+                    <!--<a href="#" id="sufPage">下一页</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div id="go_top">
+    <a href="#"><i class="layui-icon layui-icon-top" style="font-size: 50px;"></i> </a>
+</div>
+
+<script th:src="@{/static/layui/layui.js}"></script>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    layui.use('element', function () {
+        var element = layui.element;
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#go_top").hide();
+        $(function () {
+            //检测屏幕高度
+            var height = $(window).height();
+            //scroll() 方法为滚动事件
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > height) {
+                    $("#go_top").fadeIn(500);
+                } else {
+                    $("#go_top").fadeOut(500);
+                }
+            });
+            $("#go_top").click(function () {
+                $('body,html').animate({scrollTop: 0}, 100);
+                return false;
+            });
+        });
+    });
+</script>
 </body>
 </html>

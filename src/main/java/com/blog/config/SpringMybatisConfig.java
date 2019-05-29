@@ -15,6 +15,7 @@ import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -29,50 +30,51 @@ import java.util.Properties;
 @Configuration
 @PropertySource(value = "classpath:dataSource.properties")
 @MapperScan(basePackages = "com.blog.web.dao")
+@EnableTransactionManagement
 public class SpringMybatisConfig {
 
-    @Value("${jdbc_driverClassName}")
-    private static String jdbcDriver;
-    @Value("${jdbc_url}")
-    private static String jdbcUrl;
-    @Value("${jdbc_userName}")
-    private static String jdbcUserName;
-    @Value("${jdbc_password}")
-    private static String jdbcPassword;
+    @Value("${jdbc.driverClassName}")
+    private  String jdbcDriver;
+    @Value("${jdbc.url}")
+    private  String jdbcUrl;
+    @Value("${jdbc.userName}")
+    private  String jdbcUserName;
+    @Value("${jdbc.password}")
+    private  String jdbcPassword;
     /**
      * 初始化大小
      * ，最小，最大
      */
 
-    @Value("${jdbc_initialSize}")
-    private static int initialSize;
+    @Value("${jdbc.initialSize}")
+    private  int initialSize;
 
-    @Value("${jdbc_minIdle}")
-    private static int minIdle;
+    @Value("${jdbc.minIdle}")
+    private  int minIdle;
 
-    @Value("${jdbc_maxActive}")
-    public static int maxActive;
+    @Value("${jdbc.maxActive}")
+    public  int maxActive;
     /**
      * 配置获取连接等待超时的时间
      */
-    @Value("${jdbc_maxWait}")
-    private static long maxWait;
+    @Value("${jdbc.maxWait}")
+    private  long maxWait;
     /**
      * 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
      */
-    @Value("${jdbc_timeBetweenEvictionRunsMillis}")
-    private static long timeBetweenEvictionRunsMillis;
+    @Value("${jdbc.timeBetweenEvictionRunsMillis}")
+    private  long timeBetweenEvictionRunsMillis;
     /**
      * 配置一个连接在池中最小生存的时间，单位是毫秒
      */
-    @Value("${jdbc_minEvictableIdleTimeMillis}")
-    private static long minEvictableIdleTimeMillis;
+    @Value("${jdbc.minEvictableIdleTimeMillis}")
+    private  long minEvictableIdleTimeMillis;
 
-    @Value("${jdbc_typeAliasesPackage}")
-    private static String typeAliasesPackage;
+    @Value("${jdbc.typeAliasesPackage}")
+    private  String typeAliasesPackage;
 
     @Value("${mybatis.mapperLocations}")
-    private static String mapperLocations;
+    private  String mapperLocations;
 
     @Bean("dataSource")
     public DruidDataSource dataSource() {

@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Configuration;
 /**配置系统初始化参数
  * @author wang
  */
-@Configuration
-public class SpringRootConfig {
+
+public class SpringVersionConfig {
     /**
      * 系统版本号
      */

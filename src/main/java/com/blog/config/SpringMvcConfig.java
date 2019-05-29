@@ -4,10 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.*;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
@@ -17,10 +14,10 @@ import org.thymeleaf.templatemode.TemplateMode;
 /**
  * @author wang
  */
-@Order(2)
+
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = SpringRootConfig.BASE_PACKAGE+"web")
+@ComponentScan(basePackages = {"com.blog"})
 public class SpringMvcConfig implements WebMvcConfigurer{
     /**
      * 静态资源拦截
@@ -35,6 +32,7 @@ public class SpringMvcConfig implements WebMvcConfigurer{
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**")
         .addResourceLocations("/WEB-INF/static/");
+
     }
 
     /**
@@ -81,8 +79,15 @@ public class SpringMvcConfig implements WebMvcConfigurer{
         thymeleafViewResolver.setCharacterEncoding("UTF-8");
 
         return thymeleafViewResolver;
-
-
     }
 
+    /**
+     * 配置個攔截器
+     * @param registry
+     */
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new Interceptor())
+                .addPathPatterns("/**").excludePathPatterns("/static/**");
+    }
 }
