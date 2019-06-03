@@ -83,6 +83,9 @@
             LEFT: 85%;
             bottom: 50px;
         }
+        .news-hr{
+         width: 760px;
+        }
     </style>
     <link th:href="@{/static/layui/css/layui.css}" rel="stylesheet"/>
     <!--<script th:src="@{/static/my_js/top.js}"></script>-->
@@ -124,7 +127,7 @@
                         <span class=""><i class="layui-icon layui-icon-date"></i> 2019.5.16</span>
 
 
-                        <span><img th:src="@{/static/img/bar_chart.png}" height="17px"></i> 22</span>
+                        <span><img th:src="@{/static/img/bar_chart.png}" height="17px"> 22</span>
                     </p>
                 </div>
 
@@ -134,8 +137,21 @@
 
                 <div class="met-news-content">
                     <p>文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容</p>......
+                    <div class="news-hr">
+                        <hr class="layui-bg-blue">
+                    </div>
+                    <div class="news-icon">
+                        <span><i class="layui-icon layui-icon-note"></i> java</span>
+                        <span><i class="layui-icon layui-icon-dialogue"></i>评论</span>
+                    </div>
                 </div>
+                <!--<div  class="layui-field-box">-->
+                <!--<p>看看内容显示的如何看看内容显示的如何看看内容显示的如何看看内容显示的如何看看内容显示的如何</p>-->
+                <!--</div>-->
 
+                <div>
+
+                </div>
             </div>
             <div class="met-news-list">
                 <div class="time">
@@ -192,7 +208,9 @@
                 <div class="met-news-content">
                     <p>文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容文章简略内容</p>......
                 </div>
-
+                <div>
+                    <hr>
+                </div>
             </div>
 
 
